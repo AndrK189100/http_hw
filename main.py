@@ -2,6 +2,7 @@ import requests
 import pprint
 
 
+
 def get_heroes(url, hero_names):
     heroes = []
     for hero in hero_names:
