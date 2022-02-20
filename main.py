@@ -1,4 +1,5 @@
 import requests
+import pprint
 
 
 def get_heroes(url, hero_names):
@@ -17,12 +18,7 @@ def get_smartest_hero(heroes):
     heroes.sort(key=lambda val: int(val['powerstats']['intelligence']), reverse=True)
     return heroes[0]['name']
 
-
-def main():
+if __name__ == '__main__':
     heroes = get_heroes('https://superheroapi.com/api/2619421814940190/search/', ['Hulk', 'Captain America', 'Thanos'])
     name = get_smartest_hero(heroes)
-
-
-
-if __name__ == '__main__':
-    main()
+    pprint.pprint(name)
